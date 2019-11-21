@@ -6,6 +6,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { TodoComponent } from "./todo/todo.component";
+import { AuthenticationComponent } from "./authentication/authentication.component";
 
 const routes: Routes = [
   { path: ":status", component: TodoComponent },
@@ -13,14 +14,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent],
+  declarations: [AppComponent, TodoComponent, AuthenticationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthenticationComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
