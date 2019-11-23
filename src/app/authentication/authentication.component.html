@@ -1,17 +1,9 @@
 <div class="login-page">
   <div class="form">
-    <form
-      class="login-form"
-      #loginForm="ngForm"
-      (ngSubmit)="onSubmit(loginForm.value)"
-    >
+    <form class="login-form" #loginForm="ngForm">
       <input type="text" placeholder="username" name="username" ngModel />
       <input type="password" placeholder="password" name="password" ngModel />
-      <button
-        type="submit"
-        value="submit"
-        (click)="loginButton(password.value)"
-      >
+      <button type="submit" value="submit" (click)="onSubmit(loginForm)">
         login
       </button>
     </form>
