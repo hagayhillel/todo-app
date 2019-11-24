@@ -9,12 +9,13 @@ import { LoginAuthService } from "src/app/login-auth.service";
   styleUrls: ["./authentication.component.scss"]
 })
 export class AuthenticationComponent implements OnInit {
-  constructor() {}
+  constructor(private loginAuthService: LoginAuthService) {
+    this.loginAuthService = loginAuthService;
+  }
+
   ngOnInit() {}
 
   onSubmit(loginForm: any) {
-    alert(
-      `Username: ${loginForm.value.username} \nPassword: ${loginForm.value.password}`
-    );
+    this.loginAuthService.onSubmit(loginForm);
   }
 }
