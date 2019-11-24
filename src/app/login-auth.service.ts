@@ -7,8 +7,7 @@ export class LoginAuthService {
   constructor() {}
 
   onSubmit(loginForm: any) {
-    alert(
-      `Username: ${loginForm.value.username} \nPassword: ${loginForm.value.password}`
-    );
+    let password: string = loginForm.value.password;
+    alert(`Username: ${loginForm.value.username} \nPassword: ${password}`);
   }
 }
