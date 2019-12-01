@@ -21,7 +21,7 @@ export class AuthenticationComponent implements OnInit {
     this.loginAuthService
       .login(loginForm.value.username, loginForm.value.password)
       .then(ok => {
-        if (ok === true) {
+        if (ok) {
           alert("its true");
           this.router.navigate(["todo"]);
         }

@@ -8,10 +8,10 @@ export class LoginAuthService {
 
   login(username: String, password: String) {
     return new Promise(function(resolve, reject) {
-      if (!(password === "12345" && username === "hagay")) {
-        reject(false);
-      } else {
+      if (password === "12345" && username === "hagay") {
         resolve(true);
+      } else {
+        reject(false);
       }
     });
   }
