@@ -10,7 +10,8 @@ import { AuthenticationComponent } from "./authentication/authentication.compone
 
 const routes: Routes = [
   { path: ":status", component: TodoComponent },
-  { path: "**", redirectTo: "/all" }
+  { path: "**", redirectTo: "/all" },
+  { path: "todo", component: TodoComponent }
 ];
 
 @NgModule({
