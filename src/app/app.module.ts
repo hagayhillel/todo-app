@@ -8,6 +8,7 @@ import { TodoComponent } from "./todo/todo.component";
 import { AuthenticationComponent } from "./authentication/authentication.component";
 
 const routes: Routes = [
+  { path: "", component: AuthenticationComponent },
   { path: ":status", component: TodoComponent },
   { path: "**", redirectTo: "/all" },
   { path: "todo", component: TodoComponent }
