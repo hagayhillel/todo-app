@@ -10,7 +10,7 @@ import { LoginAuthService } from "src/app/login-auth.service";
   styleUrls: ["./authentication.component.scss"]
 })
 export class AuthenticationComponent implements OnInit {
-  isTrue: boolean = false;
+  authonticationFailed: boolean = false;
   constructor(
     private loginAuthService: LoginAuthService,
     public router: Router
@@ -28,7 +28,7 @@ export class AuthenticationComponent implements OnInit {
         }
       })
       .catch(err => {
-        this.isTrue = true;
+        this.authonticationFailed = true;
         console.log(err);
       });
   }
