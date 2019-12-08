@@ -6,9 +6,13 @@ import { Injectable } from "@angular/core";
 export class LoginAuthService {
   constructor() {}
 
-  onSubmit(loginForm: any) {
-    alert(
-      `Username: ${loginForm.value.username} \nPassword: ${loginForm.value.password}`
-    );
+  login(username: String, password: String) {
+    return new Promise(function(resolve, reject) {
+      if (password === "12345" && username === "hagay") {
+        resolve(true);
+      } else {
+        reject(false);
+      }
+    });
   }
 }
