@@ -1,0 +1,48 @@
+button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 3rem;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  background-color: #65737e;
+  color: black;
+}
+
+.return {
+  background-color: #c0c5ce;
+  color: black;
+}
+.add-new-person {
+  background-color: #6ba8a9;
+}
+.add-new-person:hover {
+  background-color: #506c6d;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  background: #ccc;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+tr:hover {
+  background: #d1d1d1;
+}
+caption {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+}
