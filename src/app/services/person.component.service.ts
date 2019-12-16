@@ -1,13 +1,6 @@
 import { Injectable } from "@angular/core";
 
-interface Person {
-  id: number;
-  name: string;
-  lastName?: string;
-  phoneNumber?: number;
-  email?: string;
-  address?: string;
-}
+import { Person } from "src/app/models/person.model";
 
 let persons = [
   { id: 3, name: "jake" },
