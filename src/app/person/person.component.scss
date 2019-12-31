@@ -15,11 +15,14 @@ button:hover {
   background-color: #c0c5ce;
   color: black;
 }
-.add-new-person {
+.crud-buttons {
   background-color: #6ba8a9;
 }
-.add-new-person:hover {
+.crud-buttons:hover {
   background-color: #506c6d;
+}
+.delete {
+  margin-left: 10px;
 }
 table {
   border-collapse: collapse;

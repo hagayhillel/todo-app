@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 
 import { Person } from "src/app/models/person.model";
+import { resolve } from "url";
 
 let persons = [
   { id: 3, name: "jake" },
@@ -14,11 +15,12 @@ let persons = [
   providedIn: "root"
 })
 export class PersonService {
+  public nextId = 1;
   constructor() {}
 
   addPerson(person: Person) {
     persons.push(person);
-    persons.sort((a: any, b: any) => a.id - b.id);
+    this.nextId++;
   }
   updatePerson(id: number, person: string) {
     for (let i = 0; i < persons.length; i++) {
@@ -30,13 +32,10 @@ export class PersonService {
     }
   }
   deletePerson(id: number) {
-    for (let i = 0; i < persons.length; i++) {
-      if (persons[i].id === id) {
-        persons.splice(i, i + 1);
-      } else {
-        alert("Person was not found");
-      }
-    }
+    return new Promise(resolve => {
+      persons = persons.filter(personr => personr.id !== id);
+      resolve(true);
+    });
   }
   getPersons(): Array<Person> {
     return persons;

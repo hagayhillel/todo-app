@@ -1,4 +1,4 @@
-<button class="return" (click)="return()">
+<button class="return" (click)="navigateBack()">
   &laquo; Return
 </button>
 <table style="width: 100%" class="person-table">
@@ -16,9 +16,16 @@
   <tr *ngFor="let person of personList">
     <td>{{ person.id }}</td>
     <td>{{ person.name }}</td>
+    <td>{{ person.lastName }}</td>
+    <td>{{ person.phoneNumber }}</td>
+    <td>{{ person.email }}</td>
+    <td>{{ person.address }}</td>
   </tr>
 </table>
 
-<button class="add-new-person" (click)="addPersonFromService()">
+<button class="crud-buttons" (click)="addPersonFromService()">
   Add new person
+</button>
+<button class="crud-buttons delete" (click)="deletePersonFromService()">
+  Delete person (3)
 </button>
