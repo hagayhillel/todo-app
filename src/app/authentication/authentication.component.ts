@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { LoginAuthService } from "src/app/login-auth.service";
+import { LoginAuthService } from "src/app/services/login-auth.service";
 
 @Component({
   selector: "app-authentication",
@@ -10,6 +10,7 @@ import { LoginAuthService } from "src/app/login-auth.service";
   styleUrls: ["./authentication.component.scss"]
 })
 export class AuthenticationComponent implements OnInit {
+  authenticationFailed: boolean = false;
   constructor(
     private loginAuthService: LoginAuthService,
     public router: Router
@@ -22,12 +23,13 @@ export class AuthenticationComponent implements OnInit {
       .login(loginForm.value.username, loginForm.value.password)
       .then(ok => {
         if (ok) {
-          alert("its true");
           this.router.navigate(["todo"]);
+          console.log(ok);
         }
       })
       .catch(err => {
-        alert(err);
+        this.authenticationFailed = true;
+        console.log(err);
       });
   }
 }
